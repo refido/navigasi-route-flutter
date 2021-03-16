@@ -1,3 +1,6 @@
+## Hasil run
+![gambar 1](screenshot/1.jpeg)
+![gambar 2](screenshot/2.jpeg)
 # belanja
 
 A new Flutter project.
