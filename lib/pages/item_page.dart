@@ -1,3 +1,4 @@
+import 'package:belanja/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:belanja/models/item.dart';
 
@@ -15,16 +16,36 @@ class ItemPage extends StatelessWidget {
 
     return MaterialApp(
       home: Scaffold(
+        appBar: AppBar(
+          title: Text("Belanja"),
+          leading: new IconButton(
+            icon: new Icon(Icons.arrow_back),
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => HomePage(),
+                ),
+              );
+            },
+          ),
+        ),
         body: Container(
-          child: Text(
-            tempItem.merk +
-                " " +
-                " " +
-                tempItem.name +
-                " " +
-                tempItem.price.toString() +
-                " " +
-                tempItem.expDate,
+          margin: EdgeInsets.all(8),
+          child: Container(
+            margin: EdgeInsets.all(8),
+            child: Row(
+              children: [
+                Expanded(child: Text(tempItem.merk)),
+                Expanded(child: Text(tempItem.name)),
+                Expanded(
+                  child: Text(
+                    tempItem.price.toString(),
+                  ),
+                ),
+                Expanded(child: Text(tempItem.expDate)),
+              ],
+            ),
           ),
         ),
       ),
